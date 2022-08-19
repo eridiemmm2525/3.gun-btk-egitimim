@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <p>bu sayfada lokaasyon var</p>
+ <button type="button" onclick="lokasyonAl()">konum bilgisi</button>
+
+<br><br><br>
+<p id="lokasyon">....</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="index.html">ana sayfa</a>
+   <a href="ders1.html">ders1</a>
+   <a href="ders2.html">ders 2</a>
+   <a href="ders3.html">ders 3</a>
+   <a href="ders4.html">ders4 </a>
+
+
+
+<script>
+    var lokasyon=document.getElementById("lokasyon");
+    function lokasyonAl()
+    {
+        if(navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+        else
+        {
+            lokasyon.innerHTML="sen ucmuşsun";
+        }
+       
+        
+    }
+    function showPosition(position)
+    {
+        lokasyon.innerHTML="enlem:"+position.coords.latitude+"boylam:"+position.coords.longitude;
+    }
+</script> 
+    
+</body>
+</html>

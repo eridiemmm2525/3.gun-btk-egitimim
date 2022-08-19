@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="bacground-color:blue">
+/* kutuları oluştur
+isim soy isim konum u Al
+bir tuş ile hepsi kaydet
+bir tuş ile hepsini getir
+*/
+
+
+<h3>Hafızaya Veri Kaydetmek</h3>
+    <label>isim</label>
+    <input type="text" id="name">
+    <label>soy isim</label>
+    <input type="text" id="surname">
+    <button type="button"onclick="veriSakla()">Veriyi Sakla</button><br><br>
+    <button type="button"onclick="veriyiGetir()">Veriyi Getir</button><br><br>
+    
+
+
+   
+    
+
+    <h2><a href="index.html">Ana Sayfa</a></h2>
+    <h2><a href="ders1.html">Ders 1</a></h2>
+    <h2><a href="ders2.html">Ders 2</a></h2>
+    <h2><a href="ders3.html">Ders 3</a></h2>
+    <h2><a href="ders4.html">Ders 4</a></h2>
+<p id="sonuc">sonuc</p>
+    <script>
+        function veriSakla()
+        {
+            var name=document.getElementById("name").value;
+            localStorage.setItem("name", name);
+            var surname=document.getElementById("surname").value;
+            localStorage.setItem("surname", surname);
+        }
+        function veriyiGetir()
+        {
+            var sonuc=document.getElementById("sonuc");
+            sonuc.innerHTML="ad soyad:"
+            +localStorage.getItem("name")+localStorage.getItem("surname");
+        }
+    </script>
+</body>
+</html>
